@@ -1,0 +1,71 @@
+/* Form inputs */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select,
+textarea,
+.form-control {
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 6px 10px !important;
+    font-size: 0.88rem !important;
+    color: var(--b-text-main) !important;
+    background-color: #ffffff !important;
+    transition: all 0.15s ease !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus {
+    border-color: var(--b-primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Buttons */
+button,
+.btn {
+    border-radius: var(--b-radius) !important;
+    font-size: 0.86rem !important;
+    font-weight: 500 !important;
+    padding: 5px 12px !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.btn-primary {
+    background-color: var(--b-primary) !important;
+    border-color: var(--b-primary) !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--b-primary-hover) !important;
+    border-color: var(--b-primary-hover) !important;
+}
+
+/* Generic tables */
+table,
+.table {
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+}
+
+.table th {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-muted) !important;
+    font-size: 0.76rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    padding: 8px 12px !important;
+}
+
+.table td {
+    border-bottom: 1px solid var(--b-bg-subtle) !important;
+    padding: 8px 12px !important;
+    color: var(--b-text-main) !important;
+}

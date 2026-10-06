@@ -1,0 +1,39 @@
+:root {
+    /* Consistent geometry */
+    --b-radius: 4px;
+
+    /* Surfaces & text */
+    --b-bg-page: #f8fafc;
+    --b-bg-card: #ffffff;
+    --b-bg-subtle: #f1f5f9;
+    --b-border: #e2e8f0;
+    --b-border-hover: #cbd5e1;
+    --b-text-main: #0f172a;
+    --b-text-muted: #64748b;
+    --b-text-light: #94a3b8;
+
+    /* Accents & navbar */
+    --b-primary: #0284c7;
+    --b-primary-hover: #0369a1;
+    --b-navbar-bg: #0f172a;
+    --b-navbar-hover: rgba(255, 255, 255, 0.08);
+
+    /* Status badges */
+    --b-score-bg: #ecfdf5;
+    --b-score-text: #065f46;
+    --b-score-border: #a7f3d0;
+
+    --b-req-bg: #eff6ff;
+    --b-req-text: #1d4ed8;
+    --b-req-border: #bfdbfe;
+
+    --b-deadline-bg: #f8fafc;
+    --b-deadline-text: #475569;
+    --b-deadline-border: #cbd5e1;
+
+    --b-danger-bg: #fef2f2;
+    --b-danger-text: #b91c1c;
+    --b-danger-border: #fecaca;
+
+    --b-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}

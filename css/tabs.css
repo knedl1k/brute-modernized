@@ -1,0 +1,94 @@
+/* Main semester tabs */
+.col-md-8>ul.nav.nav-tabs[role="tablist"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    padding: 0 0 6px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    border-radius: 0 !important;
+    margin-bottom: 20px !important;
+    box-shadow: none !important;
+}
+
+.col-md-8>ul.nav.nav-tabs .nav-item {
+    margin: 0 !important;
+}
+
+.col-md-8>ul.nav.nav-tabs .nav-link {
+    border: 1px solid transparent !important;
+    border-radius: var(--b-radius) !important;
+    color: var(--b-text-muted) !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    padding: 6px 12px !important;
+    background: transparent !important;
+    transition: all 0.15s ease !important;
+}
+
+.col-md-8>ul.nav.nav-tabs .nav-link:hover {
+    color: var(--b-text-main) !important;
+    background-color: var(--b-bg-subtle) !important;
+}
+
+.col-md-8>ul.nav.nav-tabs .nav-link.active {
+    color: #ffffff !important;
+    background-color: var(--b-primary) !important;
+    border-color: var(--b-primary) !important;
+    font-weight: 600 !important;
+}
+
+/* Course sub-tabs (Assignments/Tests/Exams). Strict identical typography prevents layout shift on switch */
+.card-body>ul.nav.nav-tabs[role="tablist"] {
+    display: flex !important;
+    gap: 4px !important;
+    padding: 8px 12px !important;
+    background-color: #f8fafc !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+
+.card-body>ul.nav.nav-tabs li,
+.card-body>ul.nav.nav-tabs .nav-item {
+    font-size: 0.85rem !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+.card-body>ul.nav.nav-tabs a,
+.card-body>ul.nav.nav-tabs .nav-link {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    padding: 5px 12px !important;
+    border-radius: var(--b-radius) !important;
+    color: var(--b-text-muted) !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.card-body>ul.nav.nav-tabs a:hover,
+.card-body>ul.nav.nav-tabs .nav-link:hover {
+    color: var(--b-text-main) !important;
+    background-color: var(--b-bg-subtle) !important;
+}
+
+.card-body>ul.nav.nav-tabs a.active,
+.card-body>ul.nav.nav-tabs .nav-link.active,
+.card-body>ul.nav.nav-tabs li.active>a {
+    background-color: #ffffff !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}

@@ -1,0 +1,70 @@
+.badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 3px 8px !important;
+    font-size: 0.74rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    border-radius: var(--b-radius) !important;
+    border: 1px solid transparent !important;
+    white-space: nowrap !important;
+    font-style: normal !important;
+}
+
+.badge.label-deadline {
+    background-color: var(--b-deadline-bg) !important;
+    color: var(--b-deadline-text) !important;
+    border-color: var(--b-deadline-border) !important;
+    font-weight: 500 !important;
+}
+
+.badge.label-score {
+    background-color: var(--b-score-bg) !important;
+    color: var(--b-score-text) !important;
+    border-color: var(--b-score-border) !important;
+}
+
+.badge.label-required {
+    background-color: var(--b-req-bg) !important;
+    color: var(--b-req-text) !important;
+    border-color: var(--b-req-border) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0.04em !important;
+}
+
+/* Missing or unsubmitted indicator square */
+.badge.text-bg-danger {
+    background-color: var(--b-danger-bg) !important;
+    color: var(--b-danger-text) !important;
+    border-color: var(--b-danger-border) !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+}
+
+.badge.text-bg-danger .bi-x-lg {
+    font-size: 0.7rem !important;
+    font-weight: bold !important;
+}
+
+/* Info link badge (e.g. video recordings) */
+.btn.badge.btn-info {
+    background-color: #f0f9ff !important;
+    color: #0284c7 !important;
+    border: 1px solid #bae6fd !important;
+    border-radius: var(--b-radius) !important;
+    font-size: 0.74rem !important;
+    font-weight: 500 !important;
+    padding: 2px 6px !important;
+    text-decoration: none !important;
+    margin: 0 2px !important;
+}
+
+.btn.badge.btn-info:hover {
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+}

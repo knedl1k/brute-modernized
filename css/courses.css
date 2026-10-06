@@ -1,0 +1,82 @@
+.card {
+    background-color: var(--b-bg-card) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    margin-bottom: 16px !important;
+    overflow: hidden !important;
+}
+
+.card-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    border-radius: 0 !important;
+    padding: 12px 16px !important;
+    font-weight: 600 !important;
+    font-size: 0.98rem !important;
+}
+
+.card-header a {
+    color: var(--b-text-main) !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease !important;
+}
+
+.card-header a:hover {
+    color: var(--b-primary) !important;
+}
+
+.card-body {
+    padding: 0 !important;
+    color: var(--b-text-main) !important;
+}
+
+/* Empty course message fallback padding */
+.card-body:not(:has(.list-group)):not(:has(.nav-tabs)) {
+    padding: 16px !important;
+    color: var(--b-text-muted) !important;
+    font-size: 0.88rem !important;
+}
+
+.list-group {
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.list-group-item,
+.list-group-item * {
+    font-style: normal !important;
+}
+
+.list-group-item {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    row-gap: 6px !important;
+    padding: 10px 16px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--b-bg-subtle) !important;
+    background-color: transparent !important;
+    color: var(--b-text-main) !important;
+    font-size: 0.88rem !important;
+    text-decoration: none !important;
+    transition: background-color 0.15s ease !important;
+}
+
+.list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+.list-group-item:hover {
+    background-color: #f8fafc !important;
+    color: var(--b-primary) !important;
+}
+
+/* Push status badges to the right edge */
+.list-group-item>.label-right:first-of-type {
+    margin-left: auto !important;
+}
+
+.list-group-item>.label-right {
+    margin-left: 6px !important;
+}

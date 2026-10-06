@@ -1,0 +1,33 @@
+footer.footer,
+footer.footer .navbar-default,
+footer.footer .nav {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+footer.footer {
+    border-top: 1px solid var(--b-border) !important;
+    padding: 24px 0 !important;
+    margin-top: 48px !important;
+    font-size: 0.84rem !important;
+}
+
+footer.footer .nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+}
+
+footer.footer .footera,
+footer.footer .nav-item {
+    color: var(--b-text-muted) !important;
+}
+
+footer.footer .footera:hover {
+    color: var(--b-text-main) !important;
+    text-decoration: underline !important;
+}

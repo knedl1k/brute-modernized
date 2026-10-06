@@ -1,0 +1,261 @@
+/* Course teacher info bar */
+.col-md-9>div:has(> span[style*="font-weight:bold"]) {
+    color: var(--b-text-muted) !important;
+    font-size: 0.88rem !important;
+    margin-bottom: 18px !important;
+    padding: 10px 16px !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.col-md-9>div span[style*="font-weight:bold"] {
+    color: var(--b-text-main) !important;
+    font-weight: 600 !important;
+}
+
+.col-md-9>div img[src*="exmail.gif"] {
+    vertical-align: middle !important;
+    margin-left: 2px !important;
+    opacity: 0.7 !important;
+}
+
+/* Constrain wide summary table and enable horizontal scroll to prevent overflow into sidebar */
+div:has(> .card.card-info),
+.col-md-9>div[style*="width: max-content"],
+.card.card-info {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    float: none !important;
+}
+
+.card.card-info {
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    background-color: #ffffff !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    margin: 18px 0 24px 0 !important;
+    overflow: hidden !important;
+}
+
+.card.card-info .card-header {
+    background-color: #f8fafc !important;
+    color: var(--b-text-main) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    padding: 10px 16px !important;
+}
+
+.card.card-info .card-body {
+    padding: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.card.card-info .table {
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+}
+
+.card.card-info .table thead td,
+.card.card-info .table thead th {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-main) !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    border-right: 1px solid var(--b-border) !important;
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+    text-align: center !important;
+}
+
+.card.card-info .table tbody td,
+.card.card-info .table tbody th {
+    border-bottom: none !important;
+    border-right: 1px solid var(--b-border) !important;
+    padding: 8px 10px !important;
+    font-size: 0.85rem !important;
+    text-align: center !important;
+    color: var(--b-text-main) !important;
+}
+
+.card.card-info .table th:last-child,
+.card.card-info .table td:last-child {
+    border-right: none !important;
+}
+
+.card.card-info .card-footer {
+    background-color: #f8fafc !important;
+    color: var(--b-text-muted) !important;
+    font-size: 0.76rem !important;
+    border-top: 1px solid var(--b-border) !important;
+    padding: 8px 16px !important;
+    border-radius: 0 0 var(--b-radius) var(--b-radius) !important;
+}
+
+/* Assignment accordion list */
+.accordion#assignment_list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    background: transparent !important;
+}
+
+.accordion#assignment_list .accordion-item {
+    background-color: #ffffff !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    overflow: hidden !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    transition: border-color 0.15s ease !important;
+}
+
+.accordion#assignment_list .accordion-item:hover {
+    border-color: var(--b-border-hover) !important;
+}
+
+.accordion#assignment_list .accordion-header {
+    margin: 0 !important;
+}
+
+.accordion#assignment_list .accordion-button {
+    background-color: #ffffff !important;
+    color: var(--b-text-main) !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    padding: 12px 18px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.15s ease !important;
+}
+
+.accordion#assignment_list .accordion-button:hover {
+    background-color: #f8fafc !important;
+    color: var(--b-primary) !important;
+}
+
+.accordion#assignment_list .accordion-button:not(.collapsed) {
+    background-color: #f8fafc !important;
+    color: var(--b-primary) !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    box-shadow: none !important;
+}
+
+.accordion#assignment_list .accordion-body {
+    padding: 14px 20px !important;
+    background-color: #ffffff !important;
+}
+
+.accordion#assignment_list .accordion-body .input-group {
+    display: flex !important;
+    align-items: baseline !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid var(--b-bg-subtle) !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+.accordion#assignment_list .accordion-body .input-group:last-child {
+    border-bottom: none !important;
+}
+
+/* Left-align property labels with fixed width to cleanly separate from values */
+.accordion#assignment_list .accordion-body .input-group label.form-label,
+.accordion#assignment_list .accordion-body .input-group .col-sm-3 {
+    color: var(--b-text-muted) !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    width: 170px !important;
+    min-width: 170px !important;
+    max-width: 170px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 20px 0 0 !important;
+    text-align: left !important;
+    float: none !important;
+}
+
+.accordion#assignment_list .accordion-body .input-group>div.col-sm-9 {
+    flex: 1 !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: var(--b-text-main) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    float: none !important;
+}
+
+.accordion#assignment_list .accordion-body .table {
+    max-width: 360px !important;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+}
+
+.accordion#assignment_list .accordion-body .table th {
+    background-color: var(--b-bg-subtle) !important;
+    padding: 5px 10px !important;
+    font-size: 0.76rem !important;
+}
+
+.accordion#assignment_list .accordion-body .table td {
+    padding: 5px 10px !important;
+    font-size: 0.84rem !important;
+}
+
+.accordion#assignment_list .accordion-body .btn-info {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 3px 8px !important;
+    font-size: 0.8rem !important;
+    margin-left: 6px !important;
+    vertical-align: middle !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.accordion#assignment_list .accordion-body .btn-info:hover {
+    background-color: #e2e8f0 !important;
+    color: var(--b-primary) !important;
+    border-color: var(--b-border-hover) !important;
+}
+
+.accordion#assignment_list .accordion-body pre {
+    background-color: var(--b-bg-subtle) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 10px 14px !important;
+    color: var(--b-text-main) !important;
+    font-family: inherit !important;
+    font-size: 0.88rem !important;
+    margin: 4px 0 0 0 !important;
+    white-space: pre-wrap !important;
+}
+
+.accordion#assignment_list .accordion-body a {
+    color: var(--b-primary) !important;
+    text-decoration: none !important;
+}
+
+.accordion#assignment_list .accordion-body a:hover {
+    text-decoration: underline !important;
+}

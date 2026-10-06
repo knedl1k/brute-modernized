@@ -1,0 +1,71 @@
+.card.card-warning {
+    border: 1px solid var(--b-border) !important;
+    background-color: #ffffff !important;
+}
+
+.card.card-warning .card-header {
+    background-color: #f8fafc !important;
+    color: var(--b-text-main) !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid var(--b-border) !important;
+    font-size: 0.95rem !important;
+}
+
+/* Reset default italic styling for readability */
+.card.card-warning .list-group-item,
+.card.card-warning .list-group-item *,
+.card.card-warning span {
+    font-style: normal !important;
+}
+
+.card.card-warning .list-group-item {
+    display: block !important;
+    padding: 9px 14px !important;
+    border-bottom: 1px solid var(--b-bg-subtle) !important;
+    background-color: transparent !important;
+}
+
+.card.card-warning .list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+.card.card-warning .list-group-item:hover {
+    background-color: #f8fafc !important;
+}
+
+/* Prevent duplicate deadline rows caused by BRUTE's dual responsive spans */
+.card.card-warning .list-group-item>span.d-md-none.d-lg-block {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    font-size: 0.88rem !important;
+}
+
+.card.card-warning .list-group-item>span.d-block.d-lg-none {
+    display: none !important;
+}
+
+@media (max-width: 991.98px) {
+    .card.card-warning .list-group-item>span.d-md-none.d-lg-block {
+        display: none !important;
+    }
+
+    .card.card-warning .list-group-item>span.d-block.d-lg-none {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        font-size: 0.88rem !important;
+    }
+}
+
+.card.card-warning .badge.label-score {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-muted) !important;
+    border-color: var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    font-weight: 600 !important;
+    margin-left: auto !important;
+    font-style: normal !important;
+}

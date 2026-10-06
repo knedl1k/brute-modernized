@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "BRUTE Modernized",
+  "version": "1.0.0",
+  "description": "Modern & unified Firefox theme for CTU FEE's BRUTE evaluation system.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://brute.fel.cvut.cz/*",
+        "*://cw.felk.cvut.cz/*"
+      ],
+      "css": [
+        "css/variables.css",
+        "css/base.css",
+        "css/navbar.css",
+        "css/tabs.css",
+        "css/courses.css",
+        "css/badges.css",
+        "css/course-detail.css",
+        "css/sidebar.css",
+        "css/components.css",
+        "css/footer.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
