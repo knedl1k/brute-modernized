@@ -8,6 +8,14 @@
     "96": "icons/icon.svg",
     "128": "icons/icon.svg"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "brute-modernized@knedl1k",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "content_scripts": [
     {
       "matches": [
