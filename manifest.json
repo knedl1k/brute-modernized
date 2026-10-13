@@ -22,7 +22,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://brute.fel.cvut.cz/*",
+        "*://brute.fel.cvut.cz/*"
       ],
       "css": [
         "css/variables.css",
