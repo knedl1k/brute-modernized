@@ -8,7 +8,7 @@
 }
 
 .card-header {
-    background-color: #ffffff !important;
+    background-color: var(--b-bg-card) !important;
     border-bottom: 1px solid var(--b-border) !important;
     border-radius: 0 !important;
     padding: 12px 16px !important;
@@ -31,7 +31,6 @@
     color: var(--b-text-main) !important;
 }
 
-/* Empty course message fallback padding */
 .card-body:not(:has(.list-group)):not(:has(.nav-tabs)) {
     padding: 16px !important;
     color: var(--b-text-muted) !important;
@@ -68,11 +67,10 @@
 }
 
 .list-group-item:hover {
-    background-color: #f8fafc !important;
+    background-color: var(--b-bg-subtle) !important;
     color: var(--b-primary) !important;
 }
 
-/* Push status badges to the right edge */
 .list-group-item>.label-right:first-of-type {
     margin-left: auto !important;
 }

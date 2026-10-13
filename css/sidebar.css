@@ -1,17 +1,16 @@
 .card.card-warning {
     border: 1px solid var(--b-border) !important;
-    background-color: #ffffff !important;
+    background-color: var(--b-bg-card) !important;
 }
 
 .card.card-warning .card-header {
-    background-color: #f8fafc !important;
+    background-color: var(--b-bg-subtle) !important;
     color: var(--b-text-main) !important;
     font-weight: 600 !important;
     border-bottom: 1px solid var(--b-border) !important;
     font-size: 0.95rem !important;
 }
 
-/* Reset default italic styling for readability */
 .card.card-warning .list-group-item,
 .card.card-warning .list-group-item *,
 .card.card-warning span {
@@ -30,10 +29,9 @@
 }
 
 .card.card-warning .list-group-item:hover {
-    background-color: #f8fafc !important;
+    background-color: var(--b-bg-subtle) !important;
 }
 
-/* Prevent duplicate deadline rows caused by BRUTE's dual responsive spans */
 .card.card-warning .list-group-item>span.d-md-none.d-lg-block {
     display: flex !important;
     align-items: center !important;

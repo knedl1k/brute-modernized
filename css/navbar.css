@@ -1,18 +1,14 @@
-/* Unify background across all navbar containers to override Bootstrap defaults */
-nav.navbar,
 .navbar,
 .navbar-default,
 #topmenu,
-.navbar-collapse,
-.navbar-collapse.navbar-default {
-    background-color: var(--b-navbar-bg) !important;
+.navbar-collapse {
     background: var(--b-navbar-bg) !important;
     border: none !important;
     box-shadow: none !important;
 }
 
 nav.navbar {
-    border-bottom: 1px solid #1e293b !important;
+    border-bottom: 1px solid var(--b-navbar-border) !important;
     padding: 0.5rem 1.2rem !important;
     min-height: 56px !important;
 }
@@ -64,7 +60,6 @@ nav.navbar {
 .navbar-nav .nav-item>a,
 .navbar-nav .nav-link,
 .navbar-default .navbar-nav>li>a {
-    background-color: transparent !important;
     background: transparent !important;
     color: #cbd5e1 !important;
     font-size: 0.88rem !important;
@@ -97,7 +92,6 @@ nav.navbar {
 
 .navbar-nav.navbar-right .dropdown-toggle,
 .dropdown-toggle.navbar-default {
-    background-color: rgba(255, 255, 255, 0.08) !important;
     background: rgba(255, 255, 255, 0.08) !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -108,15 +102,14 @@ nav.navbar {
 }
 
 .navbar-nav.navbar-right .dropdown-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
     background: rgba(255, 255, 255, 0.15) !important;
 }
 
 .dropdown-menu {
-    background-color: #ffffff !important;
+    background-color: var(--b-bg-card) !important;
     border: 1px solid var(--b-border) !important;
     border-radius: var(--b-radius) !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15) !important;
     padding: 4px !important;
     margin-top: 6px !important;
 }
@@ -136,4 +129,37 @@ nav.navbar {
 .dropdown-item:hover {
     background-color: var(--b-bg-subtle) !important;
     color: var(--b-primary) !important;
+}
+
+#b-theme-toggle-li {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+#b-theme-toggle-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    padding: 5px 10px !important;
+    margin: 0 6px !important;
+    border-radius: var(--b-radius) !important;
+    font-size: 0.84rem !important;
+    cursor: pointer !important;
+    transition: background 0.15s ease !important;
+}
+
+#b-theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+}
+
+#b-theme-toggle-btn .b-theme-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+#b-theme-toggle-btn .b-theme-label {
+    font-weight: 500 !important;
 }

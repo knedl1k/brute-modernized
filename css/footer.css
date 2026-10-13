@@ -1,7 +1,6 @@
 footer.footer,
 footer.footer .navbar-default,
 footer.footer .nav {
-    background-color: transparent !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;

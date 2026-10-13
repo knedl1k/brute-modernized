@@ -1,5 +1,4 @@
-/* Main semester tabs */
-.col-md-8>ul.nav.nav-tabs[role="tablist"] {
+.nav-tabs {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 4px !important;
@@ -12,11 +11,14 @@
     box-shadow: none !important;
 }
 
-.col-md-8>ul.nav.nav-tabs .nav-item {
+.nav-tabs li,
+.nav-tabs .nav-item {
     margin: 0 !important;
+    list-style: none !important;
 }
 
-.col-md-8>ul.nav.nav-tabs .nav-link {
+.nav-tabs a,
+.nav-tabs .nav-link {
     border: 1px solid transparent !important;
     border-radius: var(--b-radius) !important;
     color: var(--b-text-muted) !important;
@@ -24,27 +26,34 @@
     font-weight: 500 !important;
     padding: 6px 12px !important;
     background: transparent !important;
+    text-decoration: none !important;
     transition: all 0.15s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
-.col-md-8>ul.nav.nav-tabs .nav-link:hover {
+.nav-tabs a:hover,
+.nav-tabs .nav-link:hover {
     color: var(--b-text-main) !important;
     background-color: var(--b-bg-subtle) !important;
 }
 
-.col-md-8>ul.nav.nav-tabs .nav-link.active {
-    color: #ffffff !important;
-    background-color: var(--b-primary) !important;
-    border-color: var(--b-primary) !important;
+.nav-tabs .active>a,
+.nav-tabs li.active>a,
+.nav-tabs .nav-link.active,
+.nav-tabs a.active {
+    color: var(--b-tab-active-text) !important;
+    background-color: var(--b-tab-active-bg) !important;
+    border: 1px solid var(--b-tab-active-border) !important;
     font-weight: 600 !important;
+    box-shadow: var(--b-shadow-sm) !important;
 }
 
-/* Course sub-tabs (Assignments/Tests/Exams). Strict identical typography prevents layout shift on switch */
-.card-body>ul.nav.nav-tabs[role="tablist"] {
+.card-body>.nav-tabs {
     display: flex !important;
     gap: 4px !important;
     padding: 8px 12px !important;
-    background-color: #f8fafc !important;
+    background-color: var(--b-bg-subtle) !important;
     border-bottom: 1px solid var(--b-border) !important;
     border-top: none !important;
     border-left: none !important;
@@ -53,15 +62,15 @@
     height: auto !important;
 }
 
-.card-body>ul.nav.nav-tabs li,
-.card-body>ul.nav.nav-tabs .nav-item {
+.card-body>.nav-tabs li,
+.card-body>.nav-tabs .nav-item {
     font-size: 0.85rem !important;
     height: auto !important;
     margin: 0 !important;
 }
 
-.card-body>ul.nav.nav-tabs a,
-.card-body>ul.nav.nav-tabs .nav-link {
+.card-body>.nav-tabs a,
+.card-body>.nav-tabs .nav-link {
     font-size: 0.85rem !important;
     font-weight: 500 !important;
     line-height: 1.4 !important;
@@ -76,19 +85,19 @@
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
 }
 
-.card-body>ul.nav.nav-tabs a:hover,
-.card-body>ul.nav.nav-tabs .nav-link:hover {
+.card-body>.nav-tabs a:hover,
+.card-body>.nav-tabs .nav-link:hover {
     color: var(--b-text-main) !important;
     background-color: var(--b-bg-subtle) !important;
 }
 
-.card-body>ul.nav.nav-tabs a.active,
-.card-body>ul.nav.nav-tabs .nav-link.active,
-.card-body>ul.nav.nav-tabs li.active>a {
-    background-color: #ffffff !important;
-    color: var(--b-text-main) !important;
+.card-body>.nav-tabs a.active,
+.card-body>.nav-tabs .nav-link.active,
+.card-body>.nav-tabs li.active>a {
+    background-color: var(--b-bg-card) !important;
+    color: var(--b-primary) !important;
     border: 1px solid var(--b-border) !important;
     font-size: 0.85rem !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }

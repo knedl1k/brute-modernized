@@ -1,39 +1,57 @@
 :root {
-    /* Consistent geometry */
+    color-scheme: light dark;
+
     --b-radius: 4px;
 
-    /* Surfaces & text */
-    --b-bg-page: #f8fafc;
-    --b-bg-card: #ffffff;
-    --b-bg-subtle: #f1f5f9;
-    --b-border: #e2e8f0;
-    --b-border-hover: #cbd5e1;
-    --b-text-main: #0f172a;
-    --b-text-muted: #64748b;
-    --b-text-light: #94a3b8;
+    --b-bg-page: light-dark(#f8fafc, #0b0f19);
+    --b-bg-card: light-dark(#ffffff, #131c2e);
+    --b-bg-subtle: light-dark(#f1f5f9, #1e293b);
+    --b-border: light-dark(#e2e8f0, #24334a);
+    --b-border-hover: light-dark(#cbd5e1, #3b4d66);
+    --b-text-main: light-dark(#0f172a, #f1f5f9);
+    --b-text-muted: light-dark(#64748b, #94a3b8);
+    --b-text-light: light-dark(#94a3b8, #64748b);
 
-    /* Accents & navbar */
-    --b-primary: #0284c7;
-    --b-primary-hover: #0369a1;
-    --b-navbar-bg: #0f172a;
+    --b-primary: light-dark(#0284c7, #38bdf8);
+    --b-primary-hover: light-dark(#0369a1, #7dd3fc);
+    --b-navbar-bg: light-dark(#0f172a, #080c14);
     --b-navbar-hover: rgba(255, 255, 255, 0.08);
+    --b-navbar-border: #1e293b;
 
-    /* Status badges */
-    --b-score-bg: #ecfdf5;
-    --b-score-text: #065f46;
-    --b-score-border: #a7f3d0;
+    --b-score-bg: light-dark(#ecfdf5, rgba(16, 185, 129, 0.15));
+    --b-score-text: light-dark(#065f46, #34d399);
+    --b-score-border: light-dark(#a7f3d0, rgba(16, 185, 129, 0.35));
 
-    --b-req-bg: #eff6ff;
-    --b-req-text: #1d4ed8;
-    --b-req-border: #bfdbfe;
+    --b-req-bg: light-dark(#eff6ff, rgba(59, 130, 246, 0.15));
+    --b-req-text: light-dark(#1d4ed8, #60a5fa);
+    --b-req-border: light-dark(#bfdbfe, rgba(59, 130, 246, 0.35));
 
-    --b-deadline-bg: #f8fafc;
-    --b-deadline-text: #475569;
-    --b-deadline-border: #cbd5e1;
+    --b-deadline-bg: light-dark(#f8fafc, rgba(148, 163, 184, 0.12));
+    --b-deadline-text: light-dark(#475569, #cbd5e1);
+    --b-deadline-border: light-dark(#cbd5e1, #334155);
 
-    --b-danger-bg: #fef2f2;
-    --b-danger-text: #b91c1c;
-    --b-danger-border: #fecaca;
+    --b-danger-bg: light-dark(#fef2f2, rgba(239, 68, 68, 0.15));
+    --b-danger-text: light-dark(#b91c1c, #f87171);
+    --b-danger-border: light-dark(#fecaca, rgba(239, 68, 68, 0.35));
 
-    --b-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --b-info-bg: light-dark(#f0f9ff, rgba(14, 165, 233, 0.15));
+    --b-info-text: light-dark(#0284c7, #38bdf8);
+    --b-info-border: light-dark(#bae6fd, rgba(14, 165, 233, 0.35));
+    --b-info-bg-hover: light-dark(#e0f2fe, rgba(14, 165, 233, 0.25));
+    --b-info-text-hover: light-dark(#0369a1, #7dd3fc);
+
+    --b-tab-active-bg: light-dark(var(--b-primary), rgba(56, 189, 248, 0.16));
+    --b-tab-active-text: light-dark(#ffffff, #38bdf8);
+    --b-tab-active-border: light-dark(var(--b-primary), rgba(56, 189, 248, 0.45));
+
+    --b-input-bg: light-dark(#ffffff, #101726);
+    --b-shadow-sm: 0 1px 2px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.35));
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
 }

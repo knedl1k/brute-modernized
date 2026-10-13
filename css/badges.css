@@ -36,7 +36,6 @@
     letter-spacing: 0.04em !important;
 }
 
-/* Missing or unsubmitted indicator square */
 .badge.text-bg-danger {
     background-color: var(--b-danger-bg) !important;
     color: var(--b-danger-text) !important;
@@ -51,11 +50,10 @@
     font-weight: bold !important;
 }
 
-/* Info link badge (e.g. video recordings) */
 .btn.badge.btn-info {
-    background-color: #f0f9ff !important;
-    color: #0284c7 !important;
-    border: 1px solid #bae6fd !important;
+    background-color: var(--b-info-bg) !important;
+    color: var(--b-info-text) !important;
+    border: 1px solid var(--b-info-border) !important;
     border-radius: var(--b-radius) !important;
     font-size: 0.74rem !important;
     font-weight: 500 !important;
@@ -65,6 +63,6 @@
 }
 
 .btn.badge.btn-info:hover {
-    background-color: #e0f2fe !important;
-    color: #0369a1 !important;
+    background-color: var(--b-info-bg-hover) !important;
+    color: var(--b-info-text-hover) !important;
 }
