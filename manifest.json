@@ -23,7 +23,6 @@
     {
       "matches": [
         "*://brute.fel.cvut.cz/*",
-        "*://cw.felk.cvut.cz/*"
       ],
       "css": [
         "css/variables.css",
