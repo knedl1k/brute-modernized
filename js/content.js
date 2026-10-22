@@ -1,22 +1,20 @@
 (function () {
-    const storage = (typeof browser !== 'undefined' && browser.storage) ? browser.storage : chrome.storage;
-    let currentThemeMode = 'system';
+    const storage = globalThis.browser?.storage || globalThis.chrome?.storage;
+    const CACHE_KEY = 'b-theme-cache';
+    let currentThemeMode = localStorage.getItem(CACHE_KEY) || 'system';
 
     function makeSvg(children) {
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '15');
-        svg.setAttribute('height', '15');
-        svg.setAttribute('viewBox', '0 0 24 24');
-        svg.setAttribute('fill', 'none');
-        svg.setAttribute('stroke', 'currentColor');
-        svg.setAttribute('stroke-width', '2');
-        svg.setAttribute('stroke-linecap', 'round');
-        svg.setAttribute('stroke-linejoin', 'round');
+        for (const [k, v] of Object.entries({
+            width: '15', height: '15', viewBox: '0 0 24 24', fill: 'none',
+            stroke: 'currentColor', 'stroke-width': '2',
+            'stroke-linecap': 'round', 'stroke-linejoin': 'round'
+        })) {
+            svg.setAttribute(k, v);
+        }
         for (const [tag, attrs] of children) {
             const child = document.createElementNS('http://www.w3.org/2000/svg', tag);
-            for (const [k, v] of Object.entries(attrs)) {
-                child.setAttribute(k, v);
-            }
+            for (const [k, v] of Object.entries(attrs)) child.setAttribute(k, v);
             svg.appendChild(child);
         }
         return svg;
@@ -24,7 +22,7 @@
 
     const THEMES = {
         system: {
-            getIcon: () => makeSvg([
+            icon: makeSvg([
                 ['rect', { x: '2', y: '3', width: '20', height: '14', rx: '2', ry: '2' }],
                 ['line', { x1: '8', y1: '21', x2: '16', y2: '21' }],
                 ['line', { x1: '12', y1: '17', x2: '12', y2: '21' }]
@@ -34,7 +32,7 @@
             next: 'dark'
         },
         dark: {
-            getIcon: () => makeSvg([
+            icon: makeSvg([
                 ['path', { d: 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' }]
             ]),
             label: () => 'Dark',
@@ -42,7 +40,7 @@
             next: 'light'
         },
         light: {
-            getIcon: () => makeSvg([
+            icon: makeSvg([
                 ['circle', { cx: '12', cy: '12', r: '5' }],
                 ['line', { x1: '12', y1: '1', x2: '12', y2: '3' }],
                 ['line', { x1: '12', y1: '21', x2: '12', y2: '23' }],
@@ -59,16 +57,15 @@
         }
     };
 
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
     function isDarkActive(mode) {
-        if (mode === 'dark') return true;
-        if (mode === 'light') return false;
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return mode === 'dark' || (mode !== 'light' && mediaQuery.matches);
     }
 
     function updateMetaTags(effectiveDark) {
-        const head = document.head || document.documentElement;
-        if (!head) {
-            document.addEventListener('DOMContentLoaded', () => updateMetaTags(effectiveDark), { once: true });
+        if (!document.head) {
+            document.addEventListener('DOMContentLoaded', () => updateMetaTags(isDarkActive(currentThemeMode)), { once: true });
             return;
         }
 
@@ -76,18 +73,16 @@
         if (!csMeta) {
             csMeta = document.createElement('meta');
             csMeta.name = 'color-scheme';
-            head.appendChild(csMeta);
+            document.head.appendChild(csMeta);
         }
         csMeta.content = effectiveDark ? 'dark' : 'light';
 
-        let drLock = document.querySelector('meta[name="darkreader-lock"]');
-        if (effectiveDark) {
-            if (!drLock) {
-                drLock = document.createElement('meta');
-                drLock.name = 'darkreader-lock';
-                head.appendChild(drLock);
-            }
-        } else if (drLock) {
+        const drLock = document.querySelector('meta[name="darkreader-lock"]');
+        if (effectiveDark && !drLock) {
+            const meta = document.createElement('meta');
+            meta.name = 'darkreader-lock';
+            document.head.appendChild(meta);
+        } else if (!effectiveDark && drLock) {
             drLock.remove();
         }
     }
@@ -97,58 +92,39 @@
         if (!btn) return;
 
         const cfg = THEMES[mode] || THEMES.system;
-        const iconEl = btn.querySelector('.b-theme-icon');
+        btn.querySelector('.b-theme-icon')?.replaceChildren(cfg.icon.cloneNode(true));
         const textEl = btn.querySelector('.b-theme-label');
-
-        if (iconEl) iconEl.replaceChildren(cfg.getIcon());
         if (textEl) textEl.textContent = cfg.label(effectiveDark);
         btn.title = cfg.title;
         btn.setAttribute('aria-label', cfg.title);
     }
 
     function applyTheme(mode) {
-        currentThemeMode = mode || 'system';
-        const root = document.documentElement;
-        if (root) {
-            root.setAttribute('data-theme', currentThemeMode);
-        }
+        currentThemeMode = THEMES[mode] ? mode : 'system';
+        localStorage.setItem(CACHE_KEY, currentThemeMode);
+        document.documentElement?.setAttribute('data-theme', currentThemeMode);
 
         const effectiveDark = isDarkActive(currentThemeMode);
         updateMetaTags(effectiveDark);
         updateNavbarButton(currentThemeMode, effectiveDark);
     }
 
-    if (storage && storage.local) {
-        storage.local.get({ theme: 'system' }, (res) => {
-            applyTheme(res.theme || 'system');
-        });
-    } else {
-        applyTheme('system');
-    }
+    // Okamžitá synchronní aplikace z localStorage (zabraňuje probliknutí)
+    applyTheme(currentThemeMode);
 
-    if (storage && storage.onChanged) {
-        storage.onChanged.addListener((changes, area) => {
-            if (area === 'local' && changes.theme) {
-                applyTheme(changes.theme.newValue);
-            }
+    if (storage?.local) {
+        storage.local.get({ theme: currentThemeMode }, (res) => {
+            if (res.theme && res.theme !== currentThemeMode) applyTheme(res.theme);
         });
-    }
-
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (currentThemeMode === 'system') {
-                updateMetaTags(e.matches);
-                updateNavbarButton('system', e.matches);
-            }
+        storage.onChanged?.addListener((changes, area) => {
+            if (area === 'local' && changes.theme) applyTheme(changes.theme.newValue);
         });
     }
 
     function injectNavbarSwitcher() {
         if (document.getElementById('b-theme-toggle-li')) return;
 
-        const targetNav = document.querySelector('.navbar-nav.navbar-right') ||
-                          document.querySelector('.navbar .navbar-nav:last-of-type') ||
-                          document.querySelector('#topmenu ul.nav');
+        const targetNav = document.querySelector('.navbar-nav.navbar-right, .navbar .navbar-nav:last-of-type, #topmenu ul.nav');
         if (!targetNav) return;
 
         const li = document.createElement('li');
@@ -161,20 +137,14 @@
 
         const iconSpan = document.createElement('span');
         iconSpan.className = 'b-theme-icon';
-
         const labelSpan = document.createElement('span');
         labelSpan.className = 'b-theme-label';
 
         btn.append(iconSpan, labelSpan);
-
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
+        btn.addEventListener('click', () => {
             const nextTheme = THEMES[currentThemeMode]?.next || 'dark';
-            if (storage && storage.local) {
-                storage.local.set({ theme: nextTheme });
-            } else {
-                applyTheme(nextTheme);
-            }
+            applyTheme(nextTheme);
+            storage?.local.set({ theme: nextTheme });
         });
 
         li.appendChild(btn);
@@ -183,7 +153,7 @@
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectNavbarSwitcher);
+        document.addEventListener('DOMContentLoaded', injectNavbarSwitcher, { once: true });
     } else {
         injectNavbarSwitcher();
     }

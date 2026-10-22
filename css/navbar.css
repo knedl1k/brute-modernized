@@ -132,34 +132,34 @@ nav.navbar {
 }
 
 #b-theme-toggle-li {
-    display: inline-flex !important;
-    align-items: center !important;
+    display: inline-flex;
+    align-items: center;
 }
 
 #b-theme-toggle-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    color: #ffffff !important;
-    padding: 5px 10px !important;
-    margin: 0 6px !important;
-    border-radius: var(--b-radius) !important;
-    font-size: 0.84rem !important;
-    cursor: pointer !important;
-    transition: background 0.15s ease !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 5px 10px;
+    margin: 0 6px;
+    border-radius: var(--b-radius);
+    font-size: 0.84rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
 }
 
 #b-theme-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.16) !important;
+    background: rgba(255, 255, 255, 0.16);
 }
 
 #b-theme-toggle-btn .b-theme-icon {
-    display: inline-flex !important;
-    align-items: center !important;
+    display: inline-flex;
+    align-items: center;
 }
 
 #b-theme-toggle-btn .b-theme-label {
-    font-weight: 500 !important;
+    font-weight: 500;
 }

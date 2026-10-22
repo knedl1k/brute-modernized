@@ -11,93 +11,65 @@
     box-shadow: none !important;
 }
 
-.nav-tabs li,
-.nav-tabs .nav-item {
+.nav-tabs :is(li, .nav-item) {
     margin: 0 !important;
     list-style: none !important;
 }
 
-.nav-tabs a,
-.nav-tabs .nav-link {
+.nav-tabs :is(a, .nav-link) {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 12px !important;
     border: 1px solid transparent !important;
     border-radius: var(--b-radius) !important;
+    background: transparent !important;
     color: var(--b-text-muted) !important;
     font-size: 0.88rem !important;
     font-weight: 500 !important;
-    padding: 6px 12px !important;
-    background: transparent !important;
-    text-decoration: none !important;
-    transition: all 0.15s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-}
-
-.nav-tabs a:hover,
-.nav-tabs .nav-link:hover {
-    color: var(--b-text-main) !important;
-    background-color: var(--b-bg-subtle) !important;
-}
-
-.nav-tabs .active>a,
-.nav-tabs li.active>a,
-.nav-tabs .nav-link.active,
-.nav-tabs a.active {
-    color: var(--b-tab-active-text) !important;
-    background-color: var(--b-tab-active-bg) !important;
-    border: 1px solid var(--b-tab-active-border) !important;
-    font-weight: 600 !important;
-    box-shadow: var(--b-shadow-sm) !important;
-}
-
-.card-body>.nav-tabs {
-    display: flex !important;
-    gap: 4px !important;
-    padding: 8px 12px !important;
-    background-color: var(--b-bg-subtle) !important;
-    border-bottom: 1px solid var(--b-border) !important;
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    margin: 0 !important;
-    height: auto !important;
-}
-
-.card-body>.nav-tabs li,
-.card-body>.nav-tabs .nav-item {
-    font-size: 0.85rem !important;
-    height: auto !important;
-    margin: 0 !important;
-}
-
-.card-body>.nav-tabs a,
-.card-body>.nav-tabs .nav-link {
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    line-height: 1.4 !important;
-    padding: 5px 12px !important;
-    border-radius: var(--b-radius) !important;
-    color: var(--b-text-muted) !important;
-    border: 1px solid transparent !important;
-    background: transparent !important;
-    display: inline-flex !important;
-    align-items: center !important;
     text-decoration: none !important;
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
 }
 
-.card-body>.nav-tabs a:hover,
-.card-body>.nav-tabs .nav-link:hover {
+.nav-tabs :is(a, .nav-link):hover {
     color: var(--b-text-main) !important;
     background-color: var(--b-bg-subtle) !important;
 }
 
-.card-body>.nav-tabs a.active,
-.card-body>.nav-tabs .nav-link.active,
-.card-body>.nav-tabs li.active>a {
+.nav-tabs :is(.active > a, li.active > a, .nav-link.active, a.active) {
+    color: var(--b-tab-active-text) !important;
+    background-color: var(--b-tab-active-bg) !important;
+    border-color: var(--b-tab-active-border) !important;
+    font-weight: 600 !important;
+    box-shadow: var(--b-shadow-sm) !important;
+}
+
+/* Varianta záložek uvnitř karty */
+.card-body>.nav-tabs {
+    padding: 8px 12px !important;
+    margin: 0 !important;
+    height: auto !important;
+    background-color: var(--b-bg-subtle) !important;
+}
+
+.card-body>.nav-tabs :is(li, .nav-item) {
+    font-size: 0.85rem !important;
+    height: auto !important;
+}
+
+.card-body>.nav-tabs :is(a, .nav-link) {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    padding: 5px 12px !important;
+}
+
+.card-body>.nav-tabs :is(a, .nav-link):hover {
+    background-color: var(--b-bg-card) !important;
+}
+
+.card-body>.nav-tabs :is(.active > a, li.active > a, .nav-link.active, a.active) {
     background-color: var(--b-bg-card) !important;
     color: var(--b-primary) !important;
-    border: 1px solid var(--b-border) !important;
-    font-size: 0.85rem !important;
+    border-color: var(--b-border) !important;
     font-weight: 600 !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: var(--b-shadow-sm) !important;
 }

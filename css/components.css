@@ -50,6 +50,7 @@ table,
     background-color: var(--b-bg-card) !important;
 }
 
+table th,
 .table th {
     background-color: var(--b-bg-subtle) !important;
     color: var(--b-text-muted) !important;
@@ -61,14 +62,13 @@ table,
     padding: 8px 12px !important;
 }
 
+table td,
 .table td {
     border-bottom: 1px solid var(--b-bg-subtle) !important;
     padding: 8px 12px !important;
     color: var(--b-text-main) !important;
 }
 
-table tbody tr:hover,
-.table tbody tr:hover,
-.table-hover tbody tr:hover {
+table tbody tr:hover {
     background-color: var(--b-bg-subtle) !important;
 }
