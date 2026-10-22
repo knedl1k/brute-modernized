@@ -109,7 +109,6 @@
         updateNavbarButton(currentThemeMode, effectiveDark);
     }
 
-    // Okamžitá synchronní aplikace z localStorage (zabraňuje probliknutí)
     applyTheme(currentThemeMode);
 
     if (storage?.local) {
@@ -120,6 +119,18 @@
             if (area === 'local' && changes.theme) applyTheme(changes.theme.newValue);
         });
     }
+
+    mediaQuery.addEventListener('change', () => {
+        if (currentThemeMode === 'system') applyTheme('system');
+    });
+
+    // Prevent SyntaxHighlighter's quick-code feature from replacing code with a raw <textarea> on double-click
+    window.addEventListener('dblclick', (e) => {
+        const el = e.target instanceof Element ? e.target : e.target?.parentElement;
+        if (el?.closest('.syntaxhighlighter')) {
+            e.stopPropagation();
+        }
+    }, true);
 
     function injectNavbarSwitcher() {
         if (document.getElementById('b-theme-toggle-li')) return;

@@ -72,3 +72,108 @@ table td,
 table tbody tr:hover {
     background-color: var(--b-bg-subtle) !important;
 }
+
+body .syntaxhighlighter,
+body .syntaxhighlighter .line.alt1,
+body .syntaxhighlighter .line.alt2 {
+    background-color: var(--b-bg-page) !important;
+}
+
+body .syntaxhighlighter .line.highlighted.alt1,
+body .syntaxhighlighter .line.highlighted.alt2 {
+    background-color: var(--b-bg-subtle) !important;
+}
+
+body .syntaxhighlighter table,
+body .syntaxhighlighter tbody,
+body .syntaxhighlighter tr,
+body .syntaxhighlighter tr:hover,
+body .syntaxhighlighter td {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+body .syntaxhighlighter .container {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body .syntaxhighlighter .gutter,
+body .syntaxhighlighter .gutter .line {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-muted) !important;
+    user-select: none !important;
+}
+
+body .syntaxhighlighter .gutter .line {
+    border-right: 2px solid var(--b-border) !important;
+}
+
+body .syntaxhighlighter .gutter .line.highlighted {
+    background-color: var(--b-primary) !important;
+    color: #ffffff !important;
+}
+
+body .syntaxhighlighter .toolbar {
+    background: var(--b-bg-subtle) !important;
+    border: 1px solid var(--b-border) !important;
+}
+
+body .syntaxhighlighter .toolbar a {
+    color: var(--b-text-muted) !important;
+}
+
+body .syntaxhighlighter .toolbar a:hover {
+    color: var(--b-primary) !important;
+}
+
+body .syntaxhighlighter .plain,
+body .syntaxhighlighter .plain a {
+    color: var(--b-text-main) !important;
+}
+
+body .syntaxhighlighter .comments,
+body .syntaxhighlighter .comments a {
+    color: light-dark(#15803d, #6ee7b7) !important;
+}
+
+body .syntaxhighlighter .string,
+body .syntaxhighlighter .string a {
+    color: light-dark(#1d4ed8, #93c5fd) !important;
+}
+
+body .syntaxhighlighter .keyword,
+body .syntaxhighlighter .script {
+    color: light-dark(#0369a1, #38bdf8) !important;
+}
+
+body .syntaxhighlighter .functions,
+body .syntaxhighlighter .color2,
+body .syntaxhighlighter .color2 a {
+    color: light-dark(#be185d, #f472b6) !important;
+}
+
+body .syntaxhighlighter .value {
+    color: light-dark(#047857, #34d399) !important;
+}
+
+body .syntaxhighlighter .variable {
+    color: light-dark(#b45309, #fbbf24) !important;
+}
+
+body .syntaxhighlighter .constants {
+    color: light-dark(#1d4ed8, #60a5fa) !important;
+}
+
+body .syntaxhighlighter .preprocessor,
+body .syntaxhighlighter .color1,
+body .syntaxhighlighter .color1 a {
+    color: light-dark(#64748b, #94a3b8) !important;
+}
+
+body .syntaxhighlighter .color3,
+body .syntaxhighlighter .color3 a {
+    color: light-dark(#b91c1c, #f87171) !important;
+}

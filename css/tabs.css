@@ -43,7 +43,6 @@
     box-shadow: var(--b-shadow-sm) !important;
 }
 
-/* Varianta záložek uvnitř karty */
 .card-body>.nav-tabs {
     padding: 8px 12px !important;
     margin: 0 !important;

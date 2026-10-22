@@ -236,3 +236,72 @@ div:has(> .card.card-info),
 .accordion .accordion-body a:hover {
     text-decoration: underline !important;
 }
+
+div.main,
+div.main b {
+    color: var(--b-text-main) !important;
+}
+
+div.main h2 {
+    color: var(--b-text-main) !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+}
+
+.public {
+    background-color: var(--b-bg-card) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+    box-shadow: var(--b-shadow-sm) !important;
+}
+
+div[style*="#cfcfcf" i] {
+    background-color: var(--b-bg-subtle) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 5px 10px !important;
+    box-sizing: border-box !important;
+}
+
+:is(div[style*="#00a000" i], div[style*="#a00000" i], div[style*="#c00000" i], div[style*="#ff0000" i]) {
+    border-radius: var(--b-radius) !important;
+    padding: 6px 12px !important;
+    box-sizing: border-box !important;
+}
+
+div[style*="#00a000" i] {
+    background-color: var(--b-score-bg) !important;
+    border: 1px solid var(--b-score-border) !important;
+}
+
+div[style*="#00a000" i] span {
+    color: var(--b-score-text) !important;
+    font-weight: 600 !important;
+}
+
+:is(div[style*="#a00000" i], div[style*="#c00000" i], div[style*="#ff0000" i]) {
+    background-color: var(--b-danger-bg) !important;
+    border: 1px solid var(--b-danger-border) !important;
+}
+
+:is(div[style*="#a00000" i], div[style*="#c00000" i], div[style*="#ff0000" i]) span {
+    color: var(--b-danger-text) !important;
+    font-weight: 600 !important;
+}
+
+span[style*="#00a000" i] {
+    color: var(--b-score-text) !important;
+}
+
+:is(span[style*="#a00000" i],
+    span[style*="#c00000" i],
+    span[style*="#cc0000" i],
+    span[style*="#ff0000" i],
+    span[style*="color: red" i],
+    span[style*="color:red" i]) {
+    color: var(--b-danger-text) !important;
+}
