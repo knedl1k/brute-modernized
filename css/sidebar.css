@@ -1,7 +1,44 @@
 .card.card-warning .card-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     background-color: var(--b-bg-subtle) !important;
     color: var(--b-text-main) !important;
     font-size: 0.95rem !important;
+}
+
+#b-hide-completed-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 3px 9px !important;
+    font-size: 0.76rem !important;
+    font-weight: 500 !important;
+    color: var(--b-text-muted) !important;
+    background-color: var(--b-bg-card) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    cursor: pointer !important;
+    transition: none !important;
+}
+
+#b-hide-completed-btn:hover {
+    color: var(--b-text-main) !important;
+    border-color: var(--b-border-hover) !important;
+}
+
+#b-hide-completed-btn.active {
+    color: var(--b-tab-active-text) !important;
+    background-color: var(--b-tab-active-bg) !important;
+    border-color: var(--b-tab-active-border) !important;
+}
+
+.card.card-warning.b-hide-completed .list-group-item.b-deadline-completed {
+    display: none !important;
+}
+
+.card.card-warning.b-hide-completed .list-group-item:nth-last-child(1 of :not(.b-deadline-completed)) {
+    border-bottom: none !important;
 }
 
 .card.card-warning .list-group-item {

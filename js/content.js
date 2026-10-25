@@ -163,9 +163,79 @@
         updateNavbarButton(currentThemeMode, isDarkActive(currentThemeMode));
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectNavbarSwitcher, { once: true });
-    } else {
+    function injectDeadlineFilter() {
+        const card = document.querySelector('.card.card-warning');
+        const header = card?.querySelector('.card-header');
+        if (!card || !header || document.getElementById('b-hide-completed-btn')) return;
+
+        const completedKeys = new Map();
+        for (const courseCard of document.querySelectorAll('.col-md-8 .card')) {
+            const courseTitle = courseCard.querySelector('.card-header a')?.textContent || '';
+            const courseCode = courseTitle.split(' - ')[0]?.trim();
+
+            for (const item of courseCard.querySelectorAll('a.list-group-item[href]')) {
+                const href = item.getAttribute('href');
+                const scoreText = item.querySelector('.badge.label-score')?.textContent || '';
+                const match = scoreText.match(/(-?\d+(?:[.,]\d+)?)/);
+                const done = match ? parseFloat(match[1].replace(',', '.')) > 0 : false;
+
+                if (!completedKeys.has(href)) completedKeys.set(href, done);
+                if (courseCode) {
+                    const slug = href.split('/').pop();
+                    const altHref = `/brute/student/course/${courseCode}/${slug}`;
+                    if (!completedKeys.has(altHref)) completedKeys.set(altHref, done);
+                }
+            }
+        }
+
+        let completedCount = 0;
+        for (const item of card.querySelectorAll('a.list-group-item[href]')) {
+            if (completedKeys.get(item.getAttribute('href'))) {
+                item.classList.add('b-deadline-completed');
+                completedCount++;
+            }
+        }
+
+        const FILTER_KEY = 'b-hide-completed-deadlines';
+        let hideCompleted = localStorage.getItem(FILTER_KEY) === 'true';
+
+        const btn = document.createElement('button');
+        btn.id = 'b-hide-completed-btn';
+        btn.type = 'button';
+
+        const checkIcon = makeSvg([['polyline', { points: '20 6 9 17 4 12' }]]);
+        checkIcon.setAttribute('width', '13');
+        checkIcon.setAttribute('height', '13');
+        const labelSpan = document.createElement('span');
+        btn.append(checkIcon, labelSpan);
+
+        function updateFilterState() {
+            card.classList.toggle('b-hide-completed', hideCompleted);
+            btn.classList.toggle('active', hideCompleted);
+            labelSpan.textContent = `Hide done (${completedCount})`;
+            btn.title = hideCompleted
+                ? 'Completed deadlines (Score > 0) are hidden. Click to show all.'
+                : 'Hide completed deadlines (Score > 0)';
+        }
+
+        btn.addEventListener('click', () => {
+            hideCompleted = !hideCompleted;
+            localStorage.setItem(FILTER_KEY, String(hideCompleted));
+            updateFilterState();
+        });
+
+        updateFilterState();
+        header.appendChild(btn);
+    }
+
+    function initPageEnhancements() {
         injectNavbarSwitcher();
+        injectDeadlineFilter();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageEnhancements, { once: true });
+    } else {
+        initPageEnhancements();
     }
 })();
