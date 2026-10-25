@@ -1,3 +1,12 @@
+.col-md-4:has(.card.card-warning) {
+    margin-top: 8px !important;
+}
+
+.col-md-4>.col-md-12:has(>.card.card-warning) {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 .card.card-warning .card-header {
     display: flex !important;
     align-items: center !important;

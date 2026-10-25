@@ -163,21 +163,26 @@
         updateNavbarButton(currentThemeMode, isDarkActive(currentThemeMode));
     }
 
+    function hasPositiveScore(el) {
+        const scoreText = el.querySelector('.badge.label-score')?.textContent || '';
+        const match = scoreText.match(/(-?\d+(?:[.,]\d+)?)/);
+        return match ? parseFloat(match[1].replace(',', '.')) > 0 : false;
+    }
+
     function injectDeadlineFilter() {
         const card = document.querySelector('.card.card-warning');
         const header = card?.querySelector('.card-header');
         if (!card || !header || document.getElementById('b-hide-completed-btn')) return;
 
         const completedKeys = new Map();
+
         for (const courseCard of document.querySelectorAll('.col-md-8 .card')) {
             const courseTitle = courseCard.querySelector('.card-header a')?.textContent || '';
             const courseCode = courseTitle.split(' - ')[0]?.trim();
 
             for (const item of courseCard.querySelectorAll('a.list-group-item[href]')) {
                 const href = item.getAttribute('href');
-                const scoreText = item.querySelector('.badge.label-score')?.textContent || '';
-                const match = scoreText.match(/(-?\d+(?:[.,]\d+)?)/);
-                const done = match ? parseFloat(match[1].replace(',', '.')) > 0 : false;
+                const done = hasPositiveScore(item);
 
                 if (!completedKeys.has(href)) completedKeys.set(href, done);
                 if (courseCode) {
@@ -185,6 +190,20 @@
                     const altHref = `/brute/student/course/${courseCode}/${slug}`;
                     if (!completedKeys.has(altHref)) completedKeys.set(altHref, done);
                 }
+            }
+        }
+
+        for (const row of document.querySelectorAll('.tab-content table tr')) {
+            const link = row.querySelector('th a[href]');
+            if (!link) continue;
+            const href = link.getAttribute('href');
+            const done = hasPositiveScore(row);
+
+            if (!completedKeys.has(href)) completedKeys.set(href, done);
+            const [courseCode, slug] = link.textContent.split(' - ').map((s) => s.trim());
+            if (courseCode && slug) {
+                const altHref = `/brute/student/course/${courseCode}/${slug}`;
+                if (!completedKeys.has(altHref)) completedKeys.set(altHref, done);
             }
         }
 
