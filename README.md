@@ -53,3 +53,7 @@ brute-modernized/
        'my-theme': { label: 'My Theme', mode: 'both' } // 'both' | 'dark' | 'light'
    };
    ```
+
+## Credits
+
+- Christmas & Halloween vector illustrations are adapted from [OpenMoji](https://openmoji.org/) v15.0.0, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
