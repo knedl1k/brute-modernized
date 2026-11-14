@@ -4,6 +4,8 @@ body {
 }
 
 body {
+    background-image: var(--b-page-pattern, none) !important;
+    background-attachment: fixed !important;
     color: var(--b-text-main) !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
     -webkit-font-smoothing: antialiased;
@@ -33,9 +35,22 @@ a:hover {
 
 header h1,
 header h3 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
     font-weight: 700 !important;
     color: var(--b-text-main) !important;
     letter-spacing: -0.02em !important;
+}
+
+header h1::after,
+header h3::after {
+    content: "";
+    display: var(--b-heading-icon-display, none);
+    width: 30px;
+    height: 30px;
+    background: no-repeat center / contain var(--b-heading-icon, none);
+    flex-shrink: 0;
 }
 
 header h1 {

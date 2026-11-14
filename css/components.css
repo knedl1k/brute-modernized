@@ -19,7 +19,7 @@ textarea:focus,
 .form-control:focus {
     border-color: var(--b-primary) !important;
     outline: none !important;
-    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--b-primary) 20%, transparent) !important;
 }
 
 button,

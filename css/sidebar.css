@@ -11,7 +11,8 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    background-color: var(--b-bg-subtle) !important;
+    background: var(--b-deadline-header-bg, var(--b-bg-subtle)) !important;
+    padding-left: var(--b-deadline-header-pl, 16px) !important;
     color: var(--b-text-main) !important;
     font-size: 0.95rem !important;
 }

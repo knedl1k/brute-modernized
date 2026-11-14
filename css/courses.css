@@ -7,8 +7,17 @@
     overflow: hidden !important;
 }
 
+.card::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: var(--b-card-stripe-height, 0px);
+    background: var(--b-stripe-pattern, none);
+    flex-shrink: 0;
+}
+
 .card-header {
-    background-color: var(--b-bg-card) !important;
+    background: var(--b-card-header-bg, var(--b-bg-card)) !important;
     border-bottom: 1px solid var(--b-border) !important;
     border-radius: 0 !important;
     padding: 12px 16px !important;

@@ -106,6 +106,14 @@ div:has(> .card.card-info),
     transition: border-color 0.15s ease !important;
 }
 
+.accordion .accordion-item::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: var(--b-card-stripe-height, 0px);
+    background: var(--b-stripe-pattern, none);
+}
+
 .accordion .accordion-item:hover {
     border-color: var(--b-border-hover) !important;
 }
