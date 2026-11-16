@@ -16,13 +16,31 @@
     flex-shrink: 0;
 }
 
-.card-header {
+.card-header,
+.card-header.text-bg-light {
     background: var(--b-card-header-bg, var(--b-bg-card)) !important;
+    color: var(--b-text-main) !important;
     border-bottom: 1px solid var(--b-border) !important;
     border-radius: 0 !important;
     padding: 12px 16px !important;
+    height: auto !important;
+    min-height: 2.4em !important;
     font-weight: 600 !important;
     font-size: 0.98rem !important;
+}
+
+.card-header:has(button) {
+    background: var(--b-bg-subtle) !important;
+}
+
+.card-header > .row {
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.card-header > .row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .card-header a {
@@ -40,10 +58,34 @@
     color: var(--b-text-main) !important;
 }
 
-.card-body:not(:has(.list-group)):not(:has(.nav-tabs)) {
+.card-body:not(:has(.list-group, .list-group-item, .nav-tabs, > .collapse:only-child, > .collapsing:only-child)) {
     padding: 16px !important;
     color: var(--b-text-muted) !important;
     font-size: 0.88rem !important;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.card:has(> .card-body > :is(.collapse, .collapsing):only-child) .card-header {
+    border-bottom: none !important;
+}
+
+.card-body > :is(.collapse, .collapsing) > br,
+.card-body > :is(.collapse, .collapsing) > hr {
+    display: none !important;
+}
+
+.card-body > :is(.collapse, .collapsing) > .table {
+    margin: 0 !important;
+    border: none !important;
+    border-top: 1px solid var(--b-border) !important;
+    border-radius: 0 !important;
+}
+
+.card-body > :is(.collapse, .collapsing) > .table tbody tr:last-child :is(th, td) {
+    border-bottom: none !important;
 }
 
 .list-group {
@@ -86,4 +128,253 @@
 
 .list-group-item>.label-right {
     margin-left: 6px !important;
+}
+
+.card-footer {
+    background-color: var(--b-bg-subtle) !important;
+    border-top: 1px solid var(--b-border) !important;
+    padding: 10px 14px !important;
+    height: auto !important;
+}
+
+.card-footer > .row {
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.card-footer > .row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.card-footer > .row > :nth-child(2) {
+    text-align: center !important;
+}
+
+#test_counter:empty {
+    display: none !important;
+}
+
+#test_counter.test_counter:not(:empty) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--b-bg-card) !important;
+    color: var(--b-primary) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 3px 10px !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    box-shadow: var(--b-shadow-sm) !important;
+}
+
+.card-header > .row > .col-sm-4:last-child {
+    margin-left: auto !important;
+}
+
+#question .card-body {
+    padding: 16px 20px !important;
+    color: var(--b-text-main) !important;
+    font-size: 0.94rem !important;
+}
+
+#question .card-body > div:first-child {
+    padding: 0 0 14px 0 !important;
+    line-height: 1.6 !important;
+}
+
+img.tcecode {
+    vertical-align: -2px !important;
+    margin: 0 2px !important;
+}
+
+:root[data-theme="dark"] img.tcecode {
+    filter: invert(1) hue-rotate(180deg) brightness(1.15) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) img.tcecode {
+        filter: invert(1) hue-rotate(180deg) brightness(1.15) !important;
+    }
+}
+
+#question .radio-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 4px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+#question .radiobox {
+    position: relative !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+#question .radiobox input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+}
+
+#question .radiobox label {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 10px 14px 10px 42px !important;
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+
+#question .radiobox label:hover {
+    background-color: var(--b-bg-card) !important;
+    border-color: var(--b-border-hover) !important;
+}
+
+#question .radiobox input:checked + label {
+    background-color: color-mix(in srgb, var(--b-primary) 12%, var(--b-bg-card)) !important;
+    border-color: var(--b-primary) !important;
+    color: var(--b-text-main) !important;
+}
+
+#question .radiobox label::before {
+    content: "" !important;
+    position: absolute !important;
+    box-sizing: border-box !important;
+    width: 18px !important;
+    height: 18px !important;
+    top: 50% !important;
+    left: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: var(--b-bg-card) !important;
+    border: 1.5px solid var(--b-border-hover) !important;
+    transform: translateY(-50%) !important;
+}
+
+#question .radiobox input:checked + label::before {
+    background-color: var(--b-primary) !important;
+    border-color: var(--b-primary) !important;
+}
+
+#question .radiobox label::after {
+    content: "" !important;
+    position: absolute !important;
+    box-sizing: border-box !important;
+    width: 8px !important;
+    height: 8px !important;
+    top: 50% !important;
+    left: 19px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    transform: translateY(-50%) scale(0) !important;
+    transition: transform 0.15s ease !important;
+}
+
+#question .radiobox input:checked + label::after {
+    transform: translateY(-50%) scale(1) !important;
+    opacity: 1 !important;
+}
+
+#question .radiobox-warning {
+    margin-top: 4px !important;
+}
+
+#question .radiobox-warning label {
+    color: var(--b-text-muted) !important;
+    font-weight: 500 !important;
+    font-size: 0.86rem !important;
+}
+
+#question > .row {
+    align-items: center !important;
+    margin: 12px 0 0 0 !important;
+}
+
+#question > .row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#question > .row > :nth-child(2) {
+    text-align: center !important;
+}
+
+#question > .row > .col-sm-3:last-child {
+    margin-left: auto !important;
+}
+
+#test_navigation .list-group-item {
+    column-gap: 4px !important;
+    padding: 9px 14px !important;
+    font-size: 0.84rem !important;
+    color: var(--b-text-muted) !important;
+}
+
+#test_navigation .list-group-item b {
+    color: var(--b-text-main) !important;
+}
+
+#test_navigation .list-group-item b:not(:nth-of-type(3)) {
+    margin-right: 4px !important;
+}
+
+#test_navigation .list-group-item[style*="background-color"] {
+    background-color: color-mix(in srgb, var(--b-primary) 12%, var(--b-bg-card)) !important;
+    color: var(--b-text-main) !important;
+    border-left: 3px solid var(--b-primary) !important;
+    padding-left: 11px !important;
+}
+
+#test_navigation .list-group-item[style*="background-color"] b {
+    color: var(--b-primary) !important;
+}
+
+#test_navigation .list-group-item > .badge {
+    margin-left: auto !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    font-size: 0.8rem !important;
+}
+
+#test_navigation .list-group-item > .badge[style*="#ffaaaa" i],
+#test_navigation .list-group-item > .badge:has(.bi-x) {
+    background-color: var(--b-danger-bg) !important;
+    color: var(--b-danger-text) !important;
+    border-color: var(--b-danger-border) !important;
+}
+
+#test_navigation .list-group-item > .badge:not([style*="#ffaaaa" i]):not(:has(.bi-x)) {
+    background-color: var(--b-score-bg) !important;
+    color: var(--b-score-text) !important;
+    border-color: var(--b-score-border) !important;
 }

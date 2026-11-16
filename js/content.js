@@ -680,7 +680,19 @@
         header.appendChild(btn);
     }
 
+    function upgradeLegacyBootstrap() {
+        for (const el of document.querySelectorAll('.collapse.in')) {
+            el.classList.remove('in');
+            el.classList.add('show');
+        }
+        for (const btn of document.querySelectorAll('[data-bs-toggle="collapse"][data-target]:not([data-bs-target])')) {
+            const target = btn.getAttribute('data-target');
+            if (target) btn.setAttribute('data-bs-target', target);
+        }
+    }
+
     function initPageEnhancements() {
+        upgradeLegacyBootstrap();
         injectNavbarSwitcher();
         injectDeadlineFilter();
     }

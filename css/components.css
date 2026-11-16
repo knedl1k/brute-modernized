@@ -31,6 +31,35 @@ button,
     transition: all 0.15s ease-in-out !important;
 }
 
+.container button:not(.btn):not(.accordion-button) {
+    background-color: var(--b-bg-card) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    cursor: pointer !important;
+}
+
+.container button:not(.btn):not(.accordion-button):hover {
+    background-color: var(--b-border-hover) !important;
+    border-color: var(--b-border-hover) !important;
+    color: var(--b-primary) !important;
+}
+
+.row:has(> :is(.btn, button):not([class*="col-"])) {
+    justify-content: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 10px !important;
+}
+
+.row > :is(.btn, button):not([class*="col-"]) {
+    width: auto !important;
+    min-width: 140px !important;
+    padding: 8px 24px !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+}
+
 .btn-primary {
     background-color: var(--b-primary) !important;
     border-color: var(--b-primary) !important;
@@ -40,6 +69,37 @@ button,
 .btn-primary:hover {
     background-color: var(--b-primary-hover) !important;
     border-color: var(--b-primary-hover) !important;
+}
+
+.btn-info:not(.badge) {
+    background-color: var(--b-primary) !important;
+    border-color: var(--b-primary) !important;
+    color: light-dark(#ffffff, var(--b-bg-page)) !important;
+    font-weight: 600 !important;
+}
+
+.btn-info:not(.badge):hover {
+    background-color: var(--b-primary-hover) !important;
+    border-color: var(--b-primary-hover) !important;
+    color: light-dark(#ffffff, var(--b-bg-page)) !important;
+}
+
+.alert {
+    border-radius: var(--b-radius) !important;
+    padding: 10px 16px !important;
+    margin-bottom: 16px !important;
+}
+
+.alert-danger {
+    background-color: var(--b-danger-bg) !important;
+    color: var(--b-danger-text) !important;
+    border: 1px solid var(--b-danger-border) !important;
+}
+
+.alert-warning {
+    background-color: var(--b-req-bg) !important;
+    color: var(--b-req-text) !important;
+    border: 1px solid var(--b-req-border) !important;
 }
 
 table,
@@ -60,6 +120,7 @@ table th,
     letter-spacing: 0.05em !important;
     border-bottom: 1px solid var(--b-border) !important;
     padding: 8px 12px !important;
+    vertical-align: middle !important;
 }
 
 table td,
@@ -67,6 +128,7 @@ table td,
     border-bottom: 1px solid var(--b-bg-subtle) !important;
     padding: 8px 12px !important;
     color: var(--b-text-main) !important;
+    vertical-align: middle !important;
 }
 
 table tbody tr:hover {
