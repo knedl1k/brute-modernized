@@ -46,17 +46,17 @@ nav.navbar::after {
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 8px !important;
+    gap: 8px;
     max-width: 1320px !important;
     margin: 0 auto !important;
     padding: 0 !important;
 }
 
 .navbar .container-fluid>div:first-child {
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-    gap: 8px !important;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
 }
 
 .navbar-brand {
@@ -66,7 +66,7 @@ nav.navbar::after {
     padding: 0 !important;
     font-size: 1.25rem !important;
     font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 0.5px;
     color: #ffffff !important;
 }
 
@@ -91,7 +91,7 @@ a.navbar-brand:not(:has(img))::after {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 2px !important;
+    gap: 2px;
     margin-bottom: 0 !important;
     background: transparent !important;
 }
@@ -120,11 +120,11 @@ a.navbar-brand:not(:has(img))::after {
     font-weight: 500 !important;
     padding: 6px 12px !important;
     border-radius: var(--b-radius) !important;
-    transition: all 0.15s ease-in-out !important;
+    transition: all 0.15s ease-in-out;
     text-decoration: none !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 6px;
     white-space: nowrap !important;
 }
 
@@ -150,7 +150,7 @@ a.navbar-brand:not(:has(img))::after {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
+    gap: 6px;
     height: 34px !important;
     box-sizing: border-box !important;
     line-height: 1 !important;
@@ -185,7 +185,7 @@ a.navbar-brand:not(:has(img))::after {
     border-radius: var(--b-radius) !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 8px;
 }
 
 .dropdown-menu>li>a:hover,
@@ -203,13 +203,13 @@ a.navbar-brand:not(:has(img))::after {
 
 #b-theme-toggle-btn,
 #b-preset-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 6px;
-    height: 34px !important;
-    box-sizing: border-box !important;
-    line-height: 1 !important;
+    height: 34px;
+    box-sizing: border-box;
+    line-height: 1;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #ffffff;
@@ -259,31 +259,31 @@ a.navbar-brand:not(:has(img))::after {
 }
 
 .b-preset-option {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    padding: 6px 10px !important;
-    border: none !important;
-    border-radius: var(--b-radius) !important;
-    background: transparent !important;
-    color: var(--b-text-main) !important;
-    font-size: 0.84rem !important;
-    font-weight: 500 !important;
-    text-align: left !important;
-    cursor: pointer !important;
-    transition: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-radius: var(--b-radius);
+    background: transparent;
+    color: var(--b-text-main);
+    font-size: 0.84rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: none;
 }
 
 .b-preset-option:hover {
-    background-color: var(--b-bg-subtle) !important;
-    color: var(--b-primary) !important;
+    background-color: var(--b-bg-subtle);
+    color: var(--b-primary);
 }
 
 .b-preset-option.active {
-    background-color: var(--b-tab-active-bg) !important;
-    color: var(--b-tab-active-text) !important;
-    font-weight: 600 !important;
+    background-color: var(--b-tab-active-bg);
+    color: var(--b-tab-active-text);
+    font-weight: 600;
 }
 
 #b-nav-more-li {
@@ -293,37 +293,37 @@ a.navbar-brand:not(:has(img))::after {
 }
 
 #b-nav-more-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px !important;
-    height: 34px !important;
-    box-sizing: border-box !important;
-    line-height: 1 !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    color: #e2e8f0 !important;
-    padding: 5px 10px !important;
-    margin: 0 2px !important;
-    border-radius: var(--b-radius) !important;
-    font-size: 0.84rem !important;
-    font-weight: 500 !important;
-    white-space: nowrap !important;
-    cursor: pointer !important;
-    transition: background 0.15s ease, color 0.15s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 34px;
+    box-sizing: border-box;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: var(--b-radius);
+    font-size: 0.84rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
 }
 
 #b-nav-more-btn:hover,
 #b-nav-more-btn[aria-expanded="true"] {
-    background: rgba(255, 255, 255, 0.16) !important;
-    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
 }
 
 #b-nav-more-btn.active {
-    background: rgba(255, 255, 255, 0.18) !important;
-    border-color: rgba(255, 255, 255, 0.32) !important;
-    color: #ffffff !important;
-    font-weight: 600 !important;
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.32);
+    color: #ffffff;
+    font-weight: 600;
 }
 
 #b-nav-more-btn .b-more-icon,
@@ -387,32 +387,32 @@ a.navbar-brand:not(:has(img))::after {
 }
 
 .b-more-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 7px 10px !important;
-    border-radius: var(--b-radius) !important;
-    color: var(--b-text-main) !important;
-    background-color: var(--b-bg-subtle) !important;
-    border: 1px solid transparent !important;
-    font-size: 0.84rem !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: var(--b-radius);
+    color: var(--b-text-main);
+    background-color: var(--b-bg-subtle);
+    border: 1px solid transparent;
+    font-size: 0.84rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
 }
 
 .b-more-item:hover {
-    background-color: var(--b-bg-card) !important;
-    border-color: var(--b-primary) !important;
-    color: var(--b-primary) !important;
+    background-color: var(--b-bg-card);
+    border-color: var(--b-primary);
+    color: var(--b-primary);
 }
 
 .b-more-item.active {
-    background-color: var(--b-tab-active-bg) !important;
-    border-color: var(--b-tab-active-border) !important;
-    color: var(--b-tab-active-text) !important;
-    font-weight: 600 !important;
+    background-color: var(--b-tab-active-bg);
+    border-color: var(--b-tab-active-border);
+    color: var(--b-tab-active-text);
+    font-weight: 600;
 }
 
 .b-more-item-icon {
@@ -428,8 +428,8 @@ a.navbar-brand:not(:has(img))::after {
     }
 
     #b-theme-toggle-btn {
-        width: 34px !important;
-        padding: 0 !important;
+        width: 34px;
+        padding: 0;
     }
 }
 
@@ -449,7 +449,7 @@ a.navbar-brand:not(:has(img))::after {
 
     #b-preset-btn,
     #b-nav-more-btn {
-        padding: 5px 8px !important;
+        padding: 5px 8px;
     }
 
     .navbar-nav.navbar-right .dropdown-toggle {

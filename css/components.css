@@ -22,34 +22,34 @@ textarea:focus,
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--b-primary) 20%, transparent) !important;
 }
 
-button,
-.btn {
+.btn,
+.container button:not(.btn):not(.accordion-button):not([id^="b-"]) {
     border-radius: var(--b-radius) !important;
     font-size: 0.86rem !important;
     font-weight: 500 !important;
     padding: 5px 12px !important;
-    transition: all 0.15s ease-in-out !important;
+    transition: all 0.15s ease-in-out;
 }
 
-.container button:not(.btn):not(.accordion-button) {
-    background-color: var(--b-bg-card) !important;
-    color: var(--b-text-main) !important;
-    border: 1px solid var(--b-border) !important;
-    box-shadow: var(--b-shadow-sm) !important;
-    cursor: pointer !important;
+.container button:not(.btn):not(.accordion-button):not([id^="b-"]) {
+    background-color: var(--b-bg-card);
+    color: var(--b-text-main);
+    border: 1px solid var(--b-border);
+    box-shadow: var(--b-shadow-sm);
+    cursor: pointer;
 }
 
-.container button:not(.btn):not(.accordion-button):hover {
-    background-color: var(--b-border-hover) !important;
-    border-color: var(--b-border-hover) !important;
-    color: var(--b-primary) !important;
+.container button:not(.btn):not(.accordion-button):not([id^="b-"]):hover {
+    background-color: var(--b-border-hover);
+    border-color: var(--b-border-hover);
+    color: var(--b-primary);
 }
 
 .row:has(> :is(.btn, button):not([class*="col-"])) {
-    justify-content: center !important;
+    justify-content: center;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    gap: 10px !important;
+    gap: 10px;
 }
 
 .row > :is(.btn, button):not([class*="col-"]) {
@@ -116,8 +116,8 @@ table th,
     color: var(--b-text-muted) !important;
     font-size: 0.76rem !important;
     font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     border-bottom: 1px solid var(--b-border) !important;
     padding: 8px 12px !important;
     vertical-align: middle !important;
@@ -166,7 +166,7 @@ body .syntaxhighlighter .gutter,
 body .syntaxhighlighter .gutter .line {
     background-color: var(--b-bg-subtle) !important;
     color: var(--b-text-muted) !important;
-    user-select: none !important;
+    user-select: none;
 }
 
 body .syntaxhighlighter .gutter .line {

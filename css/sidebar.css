@@ -1,5 +1,5 @@
 .col-md-4:has(.card.card-warning) {
-    margin-top: 8px !important;
+    margin-top: 8px;
 }
 
 .col-md-4>.col-md-12:has(>.card.card-warning) {
@@ -18,29 +18,29 @@
 }
 
 #b-hide-completed-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    padding: 3px 9px !important;
-    font-size: 0.76rem !important;
-    font-weight: 500 !important;
-    color: var(--b-text-muted) !important;
-    background-color: var(--b-bg-card) !important;
-    border: 1px solid var(--b-border) !important;
-    border-radius: var(--b-radius) !important;
-    cursor: pointer !important;
-    transition: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--b-text-muted);
+    background-color: var(--b-bg-card);
+    border: 1px solid var(--b-border);
+    border-radius: var(--b-radius);
+    cursor: pointer;
+    transition: none;
 }
 
 #b-hide-completed-btn:hover {
-    color: var(--b-text-main) !important;
-    border-color: var(--b-border-hover) !important;
+    color: var(--b-text-main);
+    border-color: var(--b-border-hover);
 }
 
 #b-hide-completed-btn.active {
-    color: var(--b-tab-active-text) !important;
-    background-color: var(--b-tab-active-bg) !important;
-    border-color: var(--b-tab-active-border) !important;
+    color: var(--b-tab-active-text);
+    background-color: var(--b-tab-active-bg);
+    border-color: var(--b-tab-active-border);
 }
 
 .card.card-warning.b-hide-completed .list-group-item.b-deadline-completed {
@@ -57,10 +57,10 @@
 }
 
 .card.card-warning .list-group-item>span:is(.d-md-none.d-lg-block, .d-block.d-lg-none) {
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    font-size: 0.88rem !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.88rem;
 }
 
 .card.card-warning .list-group-item>span.d-md-none.d-lg-block {

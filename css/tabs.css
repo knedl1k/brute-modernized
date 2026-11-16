@@ -1,14 +1,14 @@
 .nav-tabs {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 4px !important;
+    gap: 4px;
     padding: 0 0 6px 0 !important;
     background: transparent !important;
     border: none !important;
     border-bottom: 1px solid var(--b-border) !important;
     border-radius: 0 !important;
     margin-bottom: 20px !important;
-    box-shadow: none !important;
+    box-shadow: none;
 }
 
 .nav-tabs :is(li, .nav-item) {
@@ -27,7 +27,7 @@
     font-size: 0.88rem !important;
     font-weight: 500 !important;
     text-decoration: none !important;
-    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-tabs :is(a, .nav-link):hover {
@@ -40,7 +40,7 @@
     background-color: var(--b-tab-active-bg) !important;
     border-color: var(--b-tab-active-border) !important;
     font-weight: 600 !important;
-    box-shadow: var(--b-shadow-sm) !important;
+    box-shadow: var(--b-shadow-sm);
 }
 
 .card-body>.nav-tabs {
@@ -70,5 +70,5 @@
     color: var(--b-primary) !important;
     border-color: var(--b-border) !important;
     font-weight: 600 !important;
-    box-shadow: var(--b-shadow-sm) !important;
+    box-shadow: var(--b-shadow-sm);
 }

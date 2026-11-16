@@ -15,10 +15,10 @@ footer.footer {
 
 footer.footer .nav {
     display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 16px !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
 
 footer.footer .footera,

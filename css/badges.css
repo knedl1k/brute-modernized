@@ -2,7 +2,7 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 4px !important;
+    gap: 4px;
     padding: 3px 8px !important;
     font-size: 0.74rem !important;
     font-weight: 600 !important;
@@ -10,7 +10,7 @@
     border-radius: var(--b-radius) !important;
     border: 1px solid transparent !important;
     white-space: nowrap !important;
-    font-style: normal !important;
+    font-style: normal;
 }
 
 .badge.label-deadline {
@@ -31,9 +31,9 @@
     color: var(--b-req-text) !important;
     border-color: var(--b-req-border) !important;
     font-weight: 600 !important;
-    text-transform: uppercase !important;
+    text-transform: uppercase;
     font-size: 0.66rem !important;
-    letter-spacing: 0.04em !important;
+    letter-spacing: 0.04em;
 }
 
 .badge.text-bg-danger {

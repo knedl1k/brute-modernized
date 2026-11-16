@@ -1,16 +1,16 @@
 .col-md-9>div:has(> span[style*="font-weight:bold"]) {
-    color: var(--b-text-muted) !important;
-    font-size: 0.88rem !important;
-    margin-bottom: 18px !important;
-    padding: 10px 16px !important;
-    background-color: var(--b-bg-card) !important;
-    border: 1px solid var(--b-border) !important;
-    border-radius: var(--b-radius) !important;
-    box-shadow: var(--b-shadow-sm) !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    gap: 6px !important;
+    color: var(--b-text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+    padding: 10px 16px;
+    background-color: var(--b-bg-card);
+    border: 1px solid var(--b-border);
+    border-radius: var(--b-radius);
+    box-shadow: var(--b-shadow-sm);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
 }
 
 .col-md-9>div span[style*="font-weight:bold"] {
@@ -19,9 +19,9 @@
 }
 
 .col-md-9>div img[src*="exmail.gif"] {
-    vertical-align: middle !important;
-    margin-left: 2px !important;
-    opacity: 0.7 !important;
+    vertical-align: middle;
+    margin-left: 2px;
+    opacity: 0.7;
 }
 
 div:has(> .card.card-info),
@@ -91,10 +91,10 @@ div:has(> .card.card-info),
 }
 
 .accordion {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    background: transparent !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: transparent;
 }
 
 .accordion .accordion-item {
@@ -167,8 +167,8 @@ div:has(> .card.card-info),
     color: var(--b-text-muted) !important;
     font-size: 0.78rem !important;
     font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     flex: 0 0 170px !important;
     max-width: 170px !important;
     margin: 0 !important;
@@ -230,10 +230,10 @@ div:has(> .card.card-info),
     border-radius: var(--b-radius) !important;
     padding: 10px 14px !important;
     color: var(--b-text-main) !important;
-    font-family: inherit !important;
+    font-family: inherit;
     font-size: 0.88rem !important;
     margin: 4px 0 0 0 !important;
-    white-space: pre-wrap !important;
+    white-space: pre-wrap;
 }
 
 .accordion .accordion-body a {
