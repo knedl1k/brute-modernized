@@ -267,6 +267,122 @@ div.main h2 {
     box-shadow: var(--b-shadow-sm) !important;
 }
 
+div.maintitle {
+    background-color: var(--b-bg-card) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+    box-shadow: var(--b-shadow-sm) !important;
+}
+
+:is(body, div.main) > :is(div.ok, div.nok, div.title) {
+    border-radius: var(--b-radius) var(--b-radius) 0 0 !important;
+    padding: 7px 14px !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+}
+
+:is(body, div.main) > div.ok {
+    background-color: var(--b-score-bg) !important;
+    color: var(--b-score-text) !important;
+    border: 1px solid var(--b-score-border) !important;
+}
+
+:is(body, div.main) > div.nok {
+    background-color: var(--b-danger-bg) !important;
+    color: var(--b-danger-text) !important;
+    border: 1px solid var(--b-danger-border) !important;
+}
+
+:is(body, div.main) > div.title {
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+}
+
+:is(div.ok, div.nok, div.title) + .public {
+    border-top: none !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.public table.stat td {
+    vertical-align: top !important;
+}
+
+.public table.points :is(td, th),
+.public table.all :is(td, th) {
+    border-color: var(--b-border) !important;
+}
+
+.public td.ok {
+    background-color: var(--b-score-bg) !important;
+    color: var(--b-score-text) !important;
+}
+
+.public td.pnok {
+    background-color: var(--b-req-bg) !important;
+    color: var(--b-req-text) !important;
+}
+
+.public td.nok {
+    background-color: var(--b-danger-bg) !important;
+    color: var(--b-danger-text) !important;
+}
+
+.public div.error,
+body > div.error {
+    color: var(--b-danger-text) !important;
+}
+
+.public .hint,
+body > .hint {
+    color: var(--b-score-text) !important;
+}
+
+.public .diff {
+    width: auto !important;
+    box-sizing: content-box !important;
+    line-height: 1.5em !important;
+    padding: 7px 12px !important;
+    margin: 6px 0 !important;
+    background-color: var(--b-bg-subtle) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    box-shadow: var(--b-shadow-sm) !important;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.public .diff::before {
+    content: "▸ ";
+    color: var(--b-primary);
+    font-weight: 700;
+}
+
+.public .diff[style*="auto"]::before {
+    content: "▾ ";
+}
+
+.public .diff:not([style*="auto"]):hover {
+    background-color: var(--b-bg-card) !important;
+    border-color: var(--b-primary) !important;
+}
+
+.public .diff pre {
+    margin: 12px 0 2px 0 !important;
+    padding: 10px 12px !important;
+    background-color: var(--b-bg-page) !important;
+    color: var(--b-text-main) !important;
+    border: 1px solid var(--b-border) !important;
+    border-radius: var(--b-radius) !important;
+    overflow-x: auto !important;
+    white-space: pre !important;
+    cursor: text;
+}
+
 div[style*="#cfcfcf" i] {
     background-color: var(--b-bg-subtle) !important;
     border: 1px solid var(--b-border) !important;
